@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Start debugging.
+set -x
+
+# Configure directories
+build_dir=$1
+cache_dir=$2
+
+cd $build_dir
+
+status "Copying config files into datadog"
+cp -f datadog.conf .apt/etc/dd-agent/datadog.conf
+
+if [ -f nginx.yaml ]; then
+    cp -f nginx.yaml .apt/etc/dd-agent/conf.d/nginx.yaml
+fi

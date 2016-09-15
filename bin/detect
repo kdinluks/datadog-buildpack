@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ -f $1/datadog.conf ]; then
+  echo "Datadog Config found"
+  exit 0
+else
+  echo "datadog.conf not found"
+  exit 1
+fi

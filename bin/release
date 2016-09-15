@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# bin/release <build-dir>
+set -x
+
+echo "Starting datadog Agent.."
+exec .apt/etc/init.d/datadog-agent start
