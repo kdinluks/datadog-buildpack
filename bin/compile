@@ -11,7 +11,7 @@ cache_dir=$2
 
 cd $build_dir
 
-status "Copying config files into datadog"
+echo "=====> Copying config files into datadog"
 cp -f datadog.conf .apt/etc/dd-agent/datadog.conf
 
 if [ -f nginx.yaml ]; then
