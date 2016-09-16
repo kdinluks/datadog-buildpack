@@ -7,6 +7,6 @@ if [ -e $1/last_pack_release.out ]; then
   rm $1/last_pack_release.out
 else
 #  echo "--- {}"
-  echo -e "---\ndefault_process_types:\n  dd: sh datadog-agent.sh"
+  echo -e "---\ndefault_process_types:\n  web: sh datadog-agent.sh\n  web: sh boot.sh"
 fi
 
