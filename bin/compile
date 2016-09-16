@@ -9,10 +9,14 @@ set -x
 build_dir=$1
 cache_dir=$2
 
+compile_buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
+compile_buildpack_bin=$compile_buildpack_dir/bin
+
 cd $build_dir
 
 echo "=====> Copying config files into datadog"
 cp -f datadog.conf .apt/etc/dd-agent/datadog.conf
+cp $compile_buildpack_bin/datadog-agent.sh .
 
 if [ -f nginx.yaml ]; then
     cp -f nginx.yaml .apt/etc/dd-agent/conf.d/nginx.yaml
