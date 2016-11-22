@@ -5,8 +5,6 @@ set -e
 # Start debugging.
 set -x
 
-nslookup predix.io
-
 # Configure directories
 build_dir=$1
 cache_dir=$2
